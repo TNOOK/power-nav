@@ -30,3 +30,8 @@ yarn-error.log*
 /apps/backend/public/bundles/
 /apps/backend/var/
 /vendor/
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###

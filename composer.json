@@ -16,6 +16,7 @@
          "ext-json": "*"
     },
     "require-dev": {
+        "phpunit/phpunit": "^9.1",
         "symfony/var-dumper": "5.1.*"
     },
     "config": {
@@ -44,18 +45,6 @@
         "symfony/polyfill-php71": "*",
         "symfony/polyfill-php70": "*",
         "symfony/polyfill-php56": "*"
-    },
-    "scripts": {
-        "auto-scripts": {
-            "cache:clear": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd"
-        },
-        "post-install-cmd": [
-            "@auto-scripts"
-        ],
-        "post-update-cmd": [
-            "@auto-scripts"
-        ]
     },
     "conflict": {
         "symfony/symfony": "*"
