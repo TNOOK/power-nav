@@ -1,4 +1,4 @@
-name: PHP Composer
+name: PHP CI
 
 on:
   push:
@@ -29,6 +29,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: PHPUnit (php-actions)
-        uses: php-actions/phpunit@v1
-        with:
-          config: phpunit.xml.dist
+        run: ./apps/backend/bin/phpunit
