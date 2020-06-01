@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="PowerNav\Sets\Domain\Set" table="sets">
+        <id name="id" type="set_id" column="id" length="36" />
+
+        <field name="exerciseName" column="exercise_name" length="50"/>
+        <field name="repsNumber" column="reps_number" type="integer"/>
+        <field name="rpe" column="rpe" type="rpe"/>
+        <field name="actualRpe" column="actual_rpe" type="rpe" nullable="true"/>
+        <field name="isDone" column="is_done" type="boolean" >
+            <options>
+                <option name="default">0</option>
+            </options>
+        </field>
+
+        <embedded class="PowerNav\Sets\Domain\ValueObject\Weight" column-prefix="weight_"  name="weight"/>
+    </entity>
+
+</doctrine-mapping>

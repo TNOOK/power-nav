@@ -1,0 +1,18 @@
+parameters:
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    # Sets
+    PowerNav\Sets\Domain\SetRepository: '@PowerNav\Sets\Infrastructure\Persistence\Doctrine\DoctrineSetRepository'
+
+    PowerNav\Sets\:
+        resource: '../../../src/Sets/'
+        exclude: '../../../src/Sets/{Domain}'
+
+    PowerNav\:
+        resource: '../../../src/*/Infrastructure/Controller'
+        tags: ['controller.service_arguments']

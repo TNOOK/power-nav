@@ -1,0 +1,8 @@
+get_set:
+    path: /sets/{id}
+    controller: PowerNav\Sets\Infrastructure\Controller\SetsGetController
+    methods: [GET]
+create_set:
+    path: /sets
+    controller: PowerNav\Sets\Infrastructure\Controller\SetsPostController
+    methods: [POST]
