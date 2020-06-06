@@ -35,3 +35,6 @@ yarn-error.log*
 /phpunit.xml
 .phpunit.result.cache
 ###< phpunit/phpunit ###
+
+# Frontend
+/apps/frontend/node_modules
