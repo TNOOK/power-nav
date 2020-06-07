@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PowerNav\Tests\Set\Domain\ValueObject;
+namespace PowerNav\Tests\Unit\Set\Domain\ValueObject;
 
 use PHPUnit\Framework\TestCase;
 use PowerNav\Sets\Domain\ValueObject\RPE;
