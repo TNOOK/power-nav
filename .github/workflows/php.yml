@@ -29,5 +29,6 @@ jobs:
         run: composer install --prefer-dist --no-progress --no-suggest
 
       - name: PHPUnit
+        id: phpunit
         working-directory: apps/backend
         run: bin/phpunit
