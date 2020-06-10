@@ -1,6 +1,6 @@
 sets:
   # loads routes from the YAML, XML or PHP files found in that directory
-  resource: '../../../src/Sets/Infrastructure/Symfony/config/'
+  resource: '../src/Sets/Infrastructure/Symfony/config/'
   type:     directory
 
 
