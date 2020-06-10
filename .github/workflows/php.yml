@@ -30,3 +30,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: PHPUnit (php-actions)
         run: ./apps/backend/bin/phpunit
+        with:
+          config: apps/backend/to/phpunit.xml
+          bootstrap: apps/backend/vendor/autoload.php
