@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PowerNav\Sets\Domain\ValueObject;
 
-class Weight
+final class Weight
 {
     private float $value;
     private WeightUnit $unit;

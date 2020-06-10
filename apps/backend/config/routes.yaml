@@ -1,6 +1,9 @@
+api_login_check:
+  path: /api/login_check
 sets:
   # loads routes from the YAML, XML or PHP files found in that directory
   resource: '../src/Sets/Infrastructure/Symfony/config/'
+  prefix: '/api'
   type:     directory
 
 

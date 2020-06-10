@@ -27,6 +27,9 @@ jobs:
         if: steps.composer-cache.outputs.cache-hit != 'true'
         run: composer install --working-dir apps/backend/composer.json --prefer-dist --no-progress --no-suggest
 
-      # Runs a single command using the runners shell
-      - name: PHPUnit (php-actions)
-        run: ./apps/backend/bin/phpunit --configuration apps/backend/to/phpunit.xml
+  phpunit:
+    needs: [build]
+    build:
+      steps:
+        - name: PHPUnit
+          run: ./apps/backend/bin/phpunit --configuration apps/backend/phpunit.xml.dist
