@@ -10,7 +10,6 @@ jobs:
   php:
 
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
 
@@ -24,9 +23,11 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
+        working-directory: apps/backend
+        id: composer-install
         if: steps.composer-cache.outputs.cache-hit != 'true'
-        run: composer install --working-dir apps/backend/ --prefer-dist --no-progress --no-suggest
+        run: composer install --prefer-dist --no-progress --no-suggest
 
       - name: PHPUnit
-        if: ${{ success() }}
-        run: ./apps/backend/bin/phpunit --configuration apps/backend/phpunit.xml.dist
+        working-directory: apps/backend
+        run: bin/phpunit
