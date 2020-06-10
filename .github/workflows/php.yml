@@ -25,7 +25,7 @@ jobs:
 
       - name: Install dependencies
         if: steps.composer-cache.outputs.cache-hit != 'true'
-        run: composer install --prefer-dist --no-progress --no-suggest
+        run: composer install --working-dir apps/backend/composer.json --prefer-dist --no-progress --no-suggest
 
       # Runs a single command using the runners shell
       - name: PHPUnit (php-actions)
