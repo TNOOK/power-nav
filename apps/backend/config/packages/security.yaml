@@ -1,7 +1,11 @@
 security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-        users_in_memory: { memory: null }
+        # in_memory: { memory: ~ }
+        entity_provider:
+            entity:
+                class: PowerNav\User\Domain\User
+                property: email
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -15,6 +19,12 @@ security:
                 check_path:               /api/login_check
                 success_handler:          lexik_jwt_authentication.handler.authentication_success
                 failure_handler:          lexik_jwt_authentication.handler.authentication_failure
+
+        register:
+            pattern:  ^/register
+            stateless: true
+            anonymous: true
+            provider: entity_provider
 
         api:
             pattern:   ^/api

@@ -8,10 +8,17 @@ services:
 
     # Sets
     PowerNav\Sets\Domain\SetRepository: '@PowerNav\Sets\Infrastructure\Persistence\Doctrine\DoctrineSetRepository'
+    PowerNav\Common\Domain\Service\UuidGenerator: '@PowerNav\Common\Infrastructure\Service\RamseyUuidGenerator'
 
+    PowerNav\Common\:
+        resource: '../src/Common/'
+        exclude: '../src/Common/{Domain}'
     PowerNav\Sets\:
         resource: '../src/Sets/'
         exclude: '../src/Sets/{Domain}'
+    PowerNav\User\:
+        resource: '../src/User/'
+        exclude: '../src/User/{Domain}'
 
     PowerNav\:
         resource: '../src/*/Infrastructure/Controller'

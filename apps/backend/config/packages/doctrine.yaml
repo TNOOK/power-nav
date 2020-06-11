@@ -3,6 +3,7 @@ doctrine:
         url: '%env(resolve:DATABASE_URL)%'
         types:
             set_id: PowerNav\Sets\Infrastructure\Persistence\Doctrine\SetIdType
+            user_id: PowerNav\User\Infrastructure\Persistence\Doctrine\UserIdType
             rpe: PowerNav\Sets\Infrastructure\Persistence\Doctrine\RPEType
             weight_unit: PowerNav\Sets\Infrastructure\Persistence\Doctrine\WeightUnitType
         # IMPORTANT: You MUST configure your server version,
@@ -16,5 +17,10 @@ doctrine:
             Sets:
                 type: xml
                 prefix: PowerNav\Sets\Domain
-                dir: '../src/Sets/Infrastructure/Persistence/Doctrine'
+                dir: '%kernel.project_dir%/src/Sets/Infrastructure/Persistence/Doctrine'
+                is_bundle: false
+            User:
+                type: xml
+                prefix: PowerNav\User\Domain
+                dir: '%kernel.project_dir%/src/User/Infrastructure/Persistence/Doctrine'
                 is_bundle: false

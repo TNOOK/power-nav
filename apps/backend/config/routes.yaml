@@ -6,4 +6,14 @@ sets:
   prefix: '/api'
   type:     directory
 
+register_user:
+  path: /register
+  controller: PowerNav\User\Infrastructure\Controller\UserRegisterPostController
+  methods: [POST]
+
+users:
+  # loads routes from the YAML, XML or PHP files found in that directory
+  resource: '../src/User/Infrastructure/Symfony/config/'
+  prefix: '/api'
+  type:     directory
 
