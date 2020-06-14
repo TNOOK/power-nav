@@ -1,3 +1,66 @@
 .Login {
-  text-align: center;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 25px 1fr 25px;
+    grid-template-rows: 1fr 25% 1fr;
+    grid-template-areas: '. title .' '. form .' '. footer .';
+}
+
+@media only screen and  (min-aspect-ratio: 9/8) {
+    .Login {
+        width: 30%;
+        box-shadow: 3px 0px 11px -5px rgba(0,0,0,0.75);
+    }
+}
+
+.title {
+    grid-area: title;
+}
+
+.title-mainTitle {
+    margin-bottom: 0;
+    color: var(--primary-color);
+}
+
+.title-subTitle {
+    margin-top: 0;
+    color: #78909c;
+    font-weight: initial;
+    font-size: 20px;
+}
+
+.SignIn {
+    width: 100%;
+    display: grid;
+    grid-template-areas: 'email' 'password' 'signInButton';
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 5px;
+    padding: 10px 0;
+    grid-area: form;
+}
+
+.SignIn-email {
+    grid-area: email;
+}
+
+.SignIn-password {
+    grid-area: password;
+}
+
+.SignIn-formButton {
+    grid-area: signInButton;
+}
+
+.Login-footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.Login-footer p {
+    color: var(--primary-color);
+    height: fit-content;
+    cursor: pointer;
 }

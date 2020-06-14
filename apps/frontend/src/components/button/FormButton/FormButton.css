@@ -1,0 +1,9 @@
+.formButton {
+    border: none;
+    background-color: var(--primary-color) !important;
+    font-size: 14px;
+    height: 45px;
+    color: white !important;
+    border-radius: 4px;
+    padding: 0 25px;
+}

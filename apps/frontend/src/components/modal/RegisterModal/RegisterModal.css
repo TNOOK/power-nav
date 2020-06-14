@@ -1,0 +1,44 @@
+.simpleModal-registerModal {
+    max-width: 400px;
+}
+
+.registerModal {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 100%;
+    grid-template-areas:
+            'title'
+            'name'
+            'email'
+            'password'
+            'footer';
+    grid-row-gap: 20px;
+    padding: 0 10px;
+}
+
+.registerModal-title {
+    grid-area: title;
+    color: var(--primary-color);
+}
+
+.registerModal-name {
+    grid-area: name;
+}
+
+.registerModal-email {
+    grid-area: email;
+}
+
+.registerModal-password {
+    grid-area: password;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.footer-cancel {
+    background-color: transparent !important;
+    color: var(--primary-color) !important;
+}
