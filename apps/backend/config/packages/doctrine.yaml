@@ -16,5 +16,5 @@ doctrine:
             Sets:
                 type: xml
                 prefix: PowerNav\Sets\Domain
-                dir: '../../../src/Sets/Infrastructure/Persistence/Doctrine'
+                dir: './src/Sets/Infrastructure/Persistence/Doctrine'
                 is_bundle: false

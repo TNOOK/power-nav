@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-            "PowerNav\\Apps\\": "apps/backend",
+            "PowerNav\\Apps\\": "config",
             "PowerNav\\": ["src"]
         }
     },

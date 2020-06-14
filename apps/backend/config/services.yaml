@@ -10,9 +10,9 @@ services:
     PowerNav\Sets\Domain\SetRepository: '@PowerNav\Sets\Infrastructure\Persistence\Doctrine\DoctrineSetRepository'
 
     PowerNav\Sets\:
-        resource: '../../../src/Sets/'
-        exclude: '../../../src/Sets/{Domain}'
+        resource: '../src/Sets/'
+        exclude: '../src/Sets/{Domain}'
 
     PowerNav\:
-        resource: '../../../src/*/Infrastructure/Controller'
+        resource: '../src/*/Infrastructure/Controller'
         tags: ['controller.service_arguments']
