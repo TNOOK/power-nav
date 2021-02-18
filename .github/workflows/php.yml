@@ -7,10 +7,9 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  php:
 
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
 
@@ -18,15 +17,18 @@ jobs:
         id: composer-cache
         uses: actions/cache@v2
         with:
-          path: vendor
+          path: apps/backend/vendor
           key: ${{ runner.os }}-node-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-node-
 
       - name: Install dependencies
+        working-directory: apps/backend
+        id: composer-install
         if: steps.composer-cache.outputs.cache-hit != 'true'
-        run: composer install --working-dir apps/backend/composer.json --prefer-dist --no-progress --no-suggest
+        run: composer install --prefer-dist --no-progress --no-suggest
 
-      # Runs a single command using the runners shell
-      - name: PHPUnit (php-actions)
-        run: ./apps/backend/bin/phpunit --configuration apps/backend/to/phpunit.xml
+      - name: PHPUnit
+        id: phpunit
+        working-directory: apps/backend
+        run: bin/phpunit

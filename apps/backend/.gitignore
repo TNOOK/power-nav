@@ -38,3 +38,7 @@ var/
 
 # Frontend
 /apps/frontend/node_modules
+
+###> lexik/jwt-authentication-bundle ###
+/config/jwt/*.pem
+###< lexik/jwt-authentication-bundle ###
